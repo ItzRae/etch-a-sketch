@@ -12,8 +12,7 @@ body {
 
 .header {
     font-family: 'Clicker Script', cursive;
-    display: flex;
-    justify-content: center;
+
     font-size: 45px;
     padding: 15px;
     margin-top: 15px;
@@ -39,7 +38,33 @@ body {
 	display:inline-block;
 }
 
-#grid {
-    grid-template-columns: repeat(16, auto);
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.container {
+    padding: 1em;
+}
+
+.grid {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    gap: 3px;
+    border: solid 2px black;
+}
+
+.pixel {
+    background-color: white;
+    border-radius: 2px;
+}
+
+.navbar {
+    padding: 1em;
+    margin-top: 1em;
+    background-color: black;
+    height: 50px;
 }
