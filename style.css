@@ -2,6 +2,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Bellota Text', cursive;
+
 }
 
 body {
@@ -11,8 +13,7 @@ body {
 }
 
 .header {
-    font-family: 'Clicker Script', cursive;
-
+    font-weight: bold;
     font-size: 45px;
     padding: 15px;
     margin-top: 15px;
@@ -31,6 +32,10 @@ body {
     0 0 151px #0fa;
 }
 
+.neon-box {
+    box-shadow: 0 0 40px 10px #652466
+}
+
 .cell {
     margin:0;
 	padding:0;
@@ -46,7 +51,6 @@ body {
 }
 
 .container {
-    padding: 1em;
 }
 
 .grid {
@@ -54,7 +58,7 @@ body {
     width: 500px;
     display: grid;
     gap: 3px;
-    border: solid 2px black;
+    border: solid 2px #753a88;
 }
 
 .pixel {
@@ -64,7 +68,15 @@ body {
 
 .navbar {
     padding: 1em;
-    margin-top: 1em;
-    background-color: black;
-    height: 50px;
+    margin-top: 1.2em;
+    border: solid 4px black;
+    height: 80px;
+}
+
+.btn, input {
+    height: 35px;
+    padding: 0 1em;
+    border: solid 2px #faf4ed;
+    background-color: transparent;
+    border-radius: 5px;
 }
