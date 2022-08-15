@@ -1,13 +1,17 @@
 const grid = document.querySelector(".grid");
 const color = document.querySelector(".color");
 const reset = document.querySelector(".reset")
-
+const random = document.querySelector(".random-color");
+const sizeElement = document.querySelector(".size");
+const button = document.querySelectorAll(".btn");
+let size = sizeElement.value;
 let draw = false;
 
 function makeGrid(pixels) {
     for (let i = 0; i < pixels * pixels; i++) {
         const pixel = document.createElement("div");
-        pixel.classList.add("pixel");   
+        pixel.classList.add("pixel");  
+   
         pixel.addEventListener('mouseover', function () {
             if (!draw) return;
             pixel.style.backgroundColor = color.value;
@@ -30,11 +34,39 @@ window.addEventListener('mouseup', function () {
     draw = false;
 })
 
-
-reset.addEventListener('click', function() {
+function resetGrid() {
     grid.innerHTML = '';
-    makeGrid(16);
+    makeGrid(size);
+}
+
+if (size == '' | size == null) 
+{
+    size = 16;
+}
+makeGrid(size);
+
+reset.addEventListener('click', resetGrid);
+
+random.addEventListener('click', function() {
+    color.value = randomColor();
+})
+
+sizeElement.addEventListener('change', function() {
+    size = sizeElement.value;
+    resetGrid()
 });
 
+// button.addEventListener('click', function() {
 
-makeGrid(16);
+// });
+
+const randomColor = () => {
+    // let color = 'rgb(';
+    // let arr = [];
+    // for (i = 0; i < 3; i++) {
+    //     arr.push(Math.floor(Math.random() * 255));
+    // }
+    // color += arr.join(',');
+    // return color + ')';
+    return '#'+('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6); 
+}

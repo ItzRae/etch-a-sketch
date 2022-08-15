@@ -1,9 +1,10 @@
 
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Bellota Text', cursive;
-
+    --main-color: #753a88;
 }
 
 body {
@@ -58,7 +59,7 @@ body {
     width: 500px;
     display: grid;
     gap: 3px;
-    border: solid 2px #753a88;
+    border: solid 2px var(--main-color);
 }
 
 .pixel {
@@ -69,8 +70,8 @@ body {
 .navbar {
     padding: 1em;
     margin-top: 1.2em;
-    border: solid 4px black;
     height: 80px;
+    display: flex;
 }
 
 .btn, input {
@@ -79,4 +80,39 @@ body {
     border: solid 2px #faf4ed;
     background-color: transparent;
     border-radius: 5px;
+}
+
+.btn {
+    transition: ease-out 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px 5px var(--main-color);
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(1.03);
+
+}
+
+.left-side, .colors {
+    display: flex;
+    width:100px;
+    flex-wrap: wrap;
+}
+
+.pen, .random-color {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.random-color {
+    margin-top: 1em;
+    width:100px;
+    height: 50px;
+}
+
+.size {
+    width: 70px;
 }
